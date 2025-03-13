@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      @font-face {
+        font-family: 'MS Mincho';
+        src: url('path_to_your_font/MS-Mincho.ttf') format('truetype');
+      }
+      body {
+        font-family: 'MS Mincho', serif;
+        display: flex;
+        background-color: #036bfc; /* 全体の背景色 */
+        color: white; /* 背景色に合わせてテキストの色を白に変更 */
+      }
+      .sidebar {
+        width: 200px;
+        background-color: #f4f4f4;
+        padding: 10px;
+        position: relative;
+        text-align: center; /* ロゴを中央揃えにする */
+      }
+      .logo {
+        width: 150px;
+        height: auto;
+        margin-bottom: 10px;
+      }
+      .welcome {
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 20px;
+        color: black; /* 「ようこそ」の文字色を黒に変更 */
+      }
+      .image-button {
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+      }
+      .content {
+        margin-left: 20px;
+        padding: 20px;
+        background-color: #e6f0ff; /* 薄青色を少し調整 */
+        color: black; /* 薄青色の背景に合わせてテキストの色を黒に変更 */
+      }
+      .header {
+        background-color: #e6f0ff; /* 薄青色を少し調整 */
+        padding: 10px;
+        text-align: center;
+      }
+      .current-time {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+      .main-buttons {
+        display: flex; /* アイコンを横に整列させる */
+        justify-content: center; /* 中央揃えにする */
+      }
+      .main-button {
+        margin: 0 10px; /* 各ボタンにマージンを追加 */
+      }
+    </style>
+    <script>
+      function updateTime() {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        const currentTime = `${hours}:${minutes}:${seconds}`;
+        document.getElementById('currentTime').innerText = currentTime;
+      }
+      setInterval(updateTime, 1000); // 毎秒現在時刻を更新
+      
+      function goToLogin() {
+        window.location.href = 'roginn.html';
+      }
+      function goToPage1() {
+        window.location.href = 'index.html';
+      }
+      function goToPage2() {
+  window.location.href = 'https://nakamata-9899.1my.jp/#id51872';
+}
+
+function downloadPDF() {
+  window.open('年間行事.pdf', '_blank');
+}
+
+
+      function goToPage4() {
+        window.location.href = 'ヘルプ.html';
+      }
+      function goToPage5() {
+        window.location.href = 'カレンダー.html';
+      }
+      function goToPage6() {
+        window.location.href = '各種ファイル.html';
+      }
+    </script>
+  </head>
+  <body onload="updateTime()">
+    <div class="sidebar">
+      <img src="rogo.png" alt="ロゴマーク" class="logo">
+      <div class="welcome">ようこそ</div>
+      <button class="image-button" onclick="goToLogin()">
+        <img src="1.png" alt="ボタン">
+      </button>
+      <button class="image-button" onclick="goToPage4()">
+        <img src="help.png" alt="ボタン2">
+      </button>
+
+      <div class="welcome">ver.1.0.2</div>
+    </div>
+    <div class="content">
+      <div class="header">
+        <div id="currentTime" class="current-time"></div>
+      </div>
+      <marquee bgcolor="#d9d9ff">パスワードやリンクの管理には十分注意してください。</marquee>
+      <p></p>
+      <div class="main-buttons">
+        <button class="image-button main-button" onclick="goToPage1()">
+          <img src="03.png" alt="トップページ">
+        </button>
+        <button class="image-button main-button" onclick="goToPage2()">
+          <img src="02.png" alt="掲示板">
+        </button>
+        <button class="image-button main-button" onclick="downloadPDF()">
+          <img src="01.png" alt="カレンダー">
+
+        <button class="image-button main-button" onclick="goToPage6()">
+          <img src="04.png" alt="各種データダウンロード">          
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

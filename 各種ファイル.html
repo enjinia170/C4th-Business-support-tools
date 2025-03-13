@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      @font-face {
+        font-family: 'MS Mincho';
+        src: url('path_to_your_font/MS-Mincho.ttf') format('truetype');
+      }
+      body {
+        font-family: 'MS Mincho', serif;
+        display: flex;
+        background-color: #036bfc; /* 全体の背景色 */
+        color: white; /* 背景色に合わせてテキストの色を白に変更 */
+      }
+      .sidebar {
+        width: 200px;
+        background-color: #f4f4f4;
+        padding: 10px;
+        position: relative;
+        text-align: center; /* ロゴを中央揃えにする */
+      }
+      .logo {
+        width: 150px;
+        height: auto;
+        margin-bottom: 10px;
+      }
+      .welcome {
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 20px;
+        color: black; /* 「ようこそ」の文字色を黒に変更 */
+      }
+      .image-button {
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+      }
+      .content {
+        margin-left: 20px;
+        padding: 20px;
+        background-color: #e6f0ff; /* 薄青色を少し調整 */
+        color: black; /* 薄青色の背景に合わせてテキストの色を黒に変更 */
+        flex-grow: 1;
+      }
+      .header {
+        background-color: #e6f0ff; /* 薄青色の背景色 */
+        padding: 10px;
+        text-align: center;
+        color: black; /* 薄青色の背景に合わせてテキストの色を黒に変更 */
+      }
+      .current-time {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+      .main-buttons {
+        display: flex; /* アイコンを横に整列させる */
+        justify-content: center; /* 中央揃えにする */
+      }
+      .main-button {
+        margin: 0 10px; /* 各ボタンにマージンを追加 */
+      }
+      .download-list {
+        margin-top: 20px;
+        background-color: white;
+        color: black;
+        padding: 20px;
+        border-radius: 5px;
+      }
+      .download-item {
+        margin-bottom: 10px;
+      }
+      .download-link {
+        text-decoration: none;
+        color: #036bfc;
+        display: flex;
+        align-items: center;
+      }
+      .download-icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
+      }
+      .home-link {
+        text-decoration: none;
+        color: #036bfc;
+        font-weight: bold;
+        display: inline-block;
+        margin-bottom: 20px;
+      }
+    </style>
+    <script>
+      function updateTime() {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        const currentTime = `${hours}:${minutes}:${seconds}`;
+        document.getElementById('currentTime').innerText = currentTime;
+      }
+      setInterval(updateTime, 1000); // 毎秒現在時刻を更新
+      function goToLogin() {
+        window.location.href = 'roginn.html';
+      }
+      function goToPage4() {
+        window.location.href = 'ヘルプ.html';
+      }
+      function goToPage5() {
+        window.location.href = 'カレンダー.html';
+      }
+    </script>
+  </head>
+  <body onload="updateTime()">
+    <div class="sidebar">
+      <img src="rogo.png" alt="ロゴマーク" class="logo">
+      <div class="welcome">ようこそ</div>
+      <button class="image-button" onclick="goToLogin()">
+        <img src="1.png" alt="ボタン">
+      </button>
+      <button class="image-button" onclick="goToPage4()">
+        <img src="help.png" alt="ボタン2">
+      </button>
+    </div>
+    <div class="content">
+      <div class="header">
+        <a href="index.html" class="home-link">ホームに戻る</a>
+        <div id="currentTime" class="current-time"></div>
+      </div>
+      <div class="download-list">
+        <h2>各種ファイルのダウンロード</h2>
+
+        <div class="download-item">
+          <a href="感染症療養解除届.pdf" class="download-link" download>
+            <img src="pdf.png" alt="PDFファイル" class="download-icon">感染症療養解除届
+          </a>
+        </div>
+
+        <div class="download-item">
+          <a href="施設破損・汚損届.pdf" class="download-link" download>
+            <img src="pdf.png" alt="PDFPDFファイル" class="download-icon">施設破損・汚損届
+          </a>
+        </div>
+
+        <div class="download-item">
+          <a href="自動車ナンバー変更届.pdf" class="download-link" download>
+            <img src="pdf.png" alt="Excelファイル" class="download-icon">自動車ナンバー変更届
+          </a>
+        </div>
+
+        <div class="download-item">
+          <a href="自動車所有届.pdf" class="download-link" download>
+            <img src="pdf.png" alt="PowerPointファイル" class="download-icon">自動車所有届
+          </a>
+
+          
+        <div class="download-item">
+                <a href="通報記録書.pdf" class="download-link" download>
+                  <img src="pdf.png" alt="PowerPointファイル" class="download-icon">通報記録書
+                </a>  
+
+        <div class="download-item">
+                    <a href="2025.pdf" class="download-link" download>
+                      <img src="pdf.png" alt="PowerPointファイル" class="download-icon">年間行事計画
+                    </a>  
+
+        <div class="download-item">
+        <a href="家人証明書取得願.docx" class="download-link" download>
+        <img src="docx.png" alt="PowerPointファイル" class="download-icon">家人証明書取得願
+        </a>     
+
+        <div class="download-item">
+            <a href="感染症療養解除届.docx" class="download-link" download>
+            <img src="docx.png" alt="PowerPointファイル" class="download-icon">感染症療養解除届
+            </a>     
+ 
+        <div class="download-item">
+                <a href="通報記録書.docx" class="download-link" download>
+                <img src="docx.png" alt="PowerPointファイル" class="download-icon">通報記録書
+                </a>    
+                
+         <div class="download-item">
+                <a href="中俣-業務支援ツール.xlsx" class="download-link" download>
+                <img src="xlsx.png" alt="PowerPointファイル" class="download-icon">中俣-業務支援ツール
+                </a>     
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

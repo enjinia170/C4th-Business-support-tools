@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ログイン</title>
+    <style>
+        body {
+            font-family: "MS Mincho", serif;
+            background-color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-container {
+            background-color: #dcdcdc;
+            padding: 20px;
+            border: 1px solid black;
+            box-shadow: 5px 5px 5px gray;
+        }
+        .login-container h2 {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input {
+            width: 200px;
+            padding: 5px;
+            margin-top: 5px;
+            border: 1px solid black;
+        }
+        .login-button {
+            margin-top: 15px;
+            padding: 5px 20px;
+            border: 1px solid black;
+            background-color: #f0f0f0;
+            cursor: pointer;
+            box-shadow: 3px 3px 3px gray;
+        }
+        .login-button:active {
+            box-shadow: none;
+            transform: translate(2px, 2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>user-rogin</h2>
+        <form action="index.html" method="post">
+            <label for="id">ID</label>
+            <input type="text" id="id" name="id"><br>
+        
+            <label for="password">パスワード</label>
+            <input type="password" id="password" name="password"><br>
+        <p></p>
+            <button type="submit">ログイン</button>
+        </form>
+        
+</body>
+</html>
